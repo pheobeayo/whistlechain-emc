@@ -4,6 +4,7 @@ import blockchain from "../assets/blockchain.svg";
 import anonymous from '../assets/anonymous.svg';
 import howImage from '../assets/howImage.svg';
 import Purchase from '../assets/Purchase.svg';
+import ellipse from '../assets/ellipse.svg';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -18,7 +19,12 @@ const Hero = () => {
         <main className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A]">
             <section className="bg-gradient-to-r from-[#080B2A] via-[#2A3E84] to-[#080B2A]">
 
-                <div>
+                <div className='bg-gradient-to-r from-[#080B2A] via-[#2A3E84] to-[#080B2A  bg-no-repeat'
+                  style={{
+                    backgroundImage: `url(${ellipse})`,
+                    backgroundSize: "30% ",
+                    backgroundPosition: "left top",
+                }}>
                     <div className="flex justify-between flex-col lg:flex-row md:flex-row items-center px-4 lg:px-0 md:px-0">
                         <div className="lg:w-[50%] md:w-[50%] w-[90%] p-16">
                             <h1 className="text-white font-titiliumweb lg:text-[72px] md:text-[72px] text-[40px] font-[700]">
@@ -46,8 +52,18 @@ const Hero = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A]">
-                <div className="lg:w-[90%] md:w-[90%] w-[100%] mx-auto border border-white rounded-2xl py-8 bg-[#171A3D]">
+            <section className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] bg-no-repeat"
+              style={{
+                backgroundImage: `url(${ellipse})`,
+                backgroundSize: "30% ",
+                backgroundPosition: "right top",
+            }}>
+                <div className="lg:w-[90%] md:w-[90%] w-[100%] mx-auto border border-white rounded-2xl py-8 bg-[#171A3D] bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${ellipse})`,
+                    backgroundSize: "30% ",
+                    backgroundPosition: "right top",
+                }}>
                     <div className="grid place-items-center"> <h2 className="lg:text-[32px] md:text-[32px] text-[24px] font-[700] text-white my-12 font-titiliumweb text-center lg:text-left md:text-left">
                         Features of WhistleChain
                     </h2>
@@ -89,8 +105,18 @@ const Hero = () => {
                     </div>
                 </div>
             </section>
-            <div className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] mt-16 ">
-                <div className=" border-white rounded-2xl lg:w-[90%] md:w-[90%] w-[100%] mx-auto border py-2 bg-[#171A3D]">
+            <div className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] mt-16 bg-no-repeat"
+             style={{
+                backgroundImage: `url(${ellipse})`,
+                backgroundSize: "30% ",
+                backgroundPosition: "left top",
+            }}>
+                <div className=" border-white rounded-2xl lg:w-[90%] md:w-[90%] w-[100%] mx-auto border py-2 bg-[#171A3D] bg-no-repeat"
+                 style={{
+                    backgroundImage: `url(${ellipse})`,
+                    backgroundSize: "30% ",
+                    backgroundPosition: "left top",
+                }}>
                     <div className="flex justify-between flex-col lg:flex-row md:flex-row items-center px-4 lg:px-0 md:px-0">
 
                         <ul className="text-white lg:w-[50%] md:w-[50%] w-[90%] p-8 text-justify">
