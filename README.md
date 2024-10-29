@@ -98,7 +98,7 @@ Design:
 
 ```bash 
 Repo:  
- https://github.com/pheobeayo/whistlechain 
+ https://github.com/pheobeayo/whistlechain-emc
  
  ``` 
 
@@ -112,10 +112,25 @@ Repo:
 
 
 
- `Whistlechain deployed to base sepolia:  `
+ ```bash 
+ Whistlechain deployed to emc: 0xF2837cD516f35686cBfD91B8A523abE6216DdE52 
+ 
+ ```
 
 
-`WhistleToken deployed to: `
+```bash 
+WhistleToken deployed to: 0x8d09d183A2d0D5a9cC91172a8568e0A1C27314ce
+
+```
 
 
-`Demo Video:https://youtu.be/J8o2bPNKrj8`
+```bash
+Demo Video:
+
+```
+
+
+```bash 
+MVP:https://whistlechain-emc.vercel.app/ 
+
+```
