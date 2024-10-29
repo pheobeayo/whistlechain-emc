@@ -1,12 +1,12 @@
 import useGetAllReports from "../../Hooks/useGetAllReports";
 import useGetUserDetails from "../../Hooks/useGetUserDetails";
 import { useWeb3ModalAccount } from "@web3modal/ethers/react";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const allReports = useGetAllReports();
   const userDetails = useGetUserDetails();
   const { address } = useWeb3ModalAccount();
-  console.log(allReports);
 
   const categories = [
     "Corruption",
@@ -25,9 +25,9 @@ const Dashboard = () => {
         <p className="text-[20px] font-bold">
           Profile <br /> Details
         </p>
-        <p>Subscription Plan: {subscription[Number(userDetails[0])]}</p>
-        <p>Report Count: {Number(userDetails[1])}</p>
-        <p>Vote Count: {Number(userDetails[2])}</p>
+        <p>Subscription Plan: {userDetails.length === 0 ? 'Free' : subscription[Number(userDetails[0])]}</p>
+        <p>Report Count: {userDetails.length === 0 ? 0 :  Number(userDetails[1])}</p>
+        <p>Vote Count: {userDetails.length === 0 ? 0 : Number(userDetails[2])}</p>
       </div>
       <div className="w-[95%] mx-auto p-8">
         <div className="flex lg:flex-row md:flex-row flex-col gap-2 my-4">
@@ -69,7 +69,6 @@ const Dashboard = () => {
           <table className="table-fixed  border border-400 rounded-2xl  border-spacing-2 w-[100%]">
             <thead className="p-4">
               <tr className="text-white font-serif font-normal">
-                <th className="border border-white">Report ID</th>
                 <th className="border border-white">Reports</th>
                 <th className="border border-white">Misconduct</th>
                 <th className="border border-white">Track </th>
@@ -83,12 +82,11 @@ const Dashboard = () => {
 
                   return info.address === address ? (
                     <tr className="font-serif font-normal" key={info.id}>
-                      <td className="border border-white font-serif font-normal">
-                        WCW-IV-00{Number(info.id)}
-                      </td>
                       <td className="border border-white">{info.title}</td>
                       <td className="border border-white">{categoryName}</td>
-                      <td className="border border-white">Track Status</td>
+                      <Link to={`/dashboard/reportUpdate/${info.id}`}>
+                      <td className="underline">Track Status</td>
+                      </Link>
                     </tr>
                   ) : null;
                 })

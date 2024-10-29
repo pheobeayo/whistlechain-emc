@@ -5,7 +5,7 @@ import useGetAllReports from "../../Hooks/useGetAllReports";
 
 const ReportUpdate = () => {
   const allReports = useGetAllReports();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const categories = [
     "Corruption",
@@ -17,7 +17,7 @@ const ReportUpdate = () => {
   ];
 
   return (
-    <main className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A]">
+    <main >
       <section className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A]">
         <div className="bg-[#040927]">
           <div
@@ -38,7 +38,10 @@ const ReportUpdate = () => {
               safely and help ensure transparency
             </p>
             <div className="mt-6">
-              <button className="bg-[#15BFFD] rounded-3xl p-4 text-[#101415] mr-4 lg:text-[20px] md:text-[20px] text-[18px]" onClick={() => navigate('/dashboard/submit-misconduct')}>
+              <button
+                className="bg-[#15BFFD] rounded-3xl p-4 text-[#101415] mr-4 lg:text-[20px] md:text-[20px] text-[18px]"
+                onClick={() => navigate("/dashboard/submit-misconduct")}
+              >
                 Whistleblow
               </button>
               <button className="border border-[#15BFFD] rounded-3xl p-4 text-white bg-transparent lg:text-[20px] md:text-[20px] text-[18px]">
@@ -49,36 +52,47 @@ const ReportUpdate = () => {
         </div>
       </section>
       <div className="flex lg:flex-row md:flex-row flex-col justify-between my-10 flex-wrap">
-        {allReports.map((info) => {
-          const categoryIndex = Number(info.category);
-          const categoryName = categories[categoryIndex] || "Unknown";
-          const detailsSnippet = info.details.split(' ').slice(0, 10).join(' ') + (info.details.split(' ').length > 20 ? '...' : '');
+        {allReports && allReports.length > 0 ? (
+          allReports.map((info) => {
+            const categoryIndex = Number(info.category);
+            const categoryName = categories[categoryIndex] || "Unknown";
+            const detailsSnippet =
+              info.details.split(" ").slice(0, 10).join(" ") +
+              (info.details.split(" ").length > 20 ? "..." : "");
 
-          return (
-            <div className="lg:w-[32%] md:w-[32%] w-[100%] p-4  border-white rounded-xl border shadow-lg mb-4" key={info.id}>
-              <Link
-                to={`/dashboard/reportUpdate/${info.id}`}
-                className="text-white"
+            return (
+              <div
+                className="lg:w-[32%] md:w-[32%] w-[100%] p-4 border-white rounded-xl border shadow-lg mb-4"
+                key={info.id}
               >
-                <img
-                  src={whistleImage}
-                  alt=""
-                  className="w-[100%] h-[237px] object-cover object-center rounded-lg"
-                />
-                <h3 className="font-bold mt-4 lg:text-[20px] md:text-[20px] text-[18px]  text-[#15BFFD]">
-                  {info.title}
-                </h3>
-                <p className="flex gap-2 text-white">
-                  Misconduct: <span>{categoryName}</span>
-                </p>
-                <p className="text-white font-bold">{detailsSnippet}</p>
-                <button className=" bg-[#15BFFD] my-4 border w-[100%] py-2 px-4 border-[#15BFFD] text-[#101415] rounded-3xl">
-                  View details
-                </button>
-              </Link>
-            </div>
-          );
-        })}
+                <Link
+                  to={`/dashboard/reportUpdate/${info.id}`}
+                  className="text-white"
+                >
+                  <img
+                    src={whistleImage}
+                    alt=""
+                    className="w-[100%] h-[237px] object-cover object-center rounded-lg"
+                  />
+                  <h3 className="font-bold mt-4 lg:text-[20px] md:text-[20px] text-[18px] text-[#15BFFD]">
+                    {info.title}
+                  </h3>
+                  <p className="flex gap-2 text-white">
+                    Misconduct: <span>{categoryName}</span>
+                  </p>
+                  <p className="text-white font-bold">{detailsSnippet}</p>
+                  <button className="bg-[#15BFFD] my-4 border w-[100%] py-2 px-4 border-[#15BFFD] text-[#101415] rounded-3xl">
+                    View details
+                  </button>
+                </Link>
+              </div>
+            );
+          })
+        ) : (
+          <div className="h-[30vh] w-full flex justify-center items-center text-center text-white">
+          <p>No Reports yet</p>
+          </div>
+        )}
       </div>
     </main>
   );

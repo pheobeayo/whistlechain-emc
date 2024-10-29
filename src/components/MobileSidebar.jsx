@@ -8,7 +8,6 @@ import { useDisconnect } from "@web3modal/ethers/react";
 import logo from "../assets/logo.svg";
 import { LuMessagesSquare } from "react-icons/lu";
 import { RiKakaoTalkFill } from "react-icons/ri";
-import Basename from "./Basename";
 
 const MobileSidebar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -32,7 +31,7 @@ const MobileSidebar = () => {
       />
       {isOpen && (
         <div className="bg-[#040927] text-[rgb(15,22,15)] p-8 py-12 h-[100vh] w-[100%] absolute top-20 left-0 bg-baseBlack/70 z-50">
-          <Basename />
+          <w3m-button />
           <NavLink
             to="/dashboard"
             className="text-[14px] text-white flex items-center py-4 mb-4 px-4 hover:text-[#15BFFD]"

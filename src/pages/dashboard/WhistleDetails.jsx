@@ -151,6 +151,7 @@ const WhistleDetails = () => {
             </button>
           </div>
           <div className=" lg:w-[52%] md:w-[52%] w-[100%]">
+          <p className="text-white text-[14px]">WCW-IV-00{id}-24</p>
             <h3 className="font-bold mt-4 text-[#15BFFD] lg:mt-0 md:mt-0 lg:text-[24px] md:text-[24px] text-[20px] capitalise font-titiliumweb">
               {details[2]}
             </h3>

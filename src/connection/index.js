@@ -1,25 +1,18 @@
 import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/react'
 
-export const SUPPORTED_CHAIN = 84532;
+export const SUPPORTED_CHAIN = 99876;
 
 export const isSupportedChain = (chainId) =>
   Number(chainId) === SUPPORTED_CHAIN;
 
-const BaseSepolia = {
+const EMC = {
   chainId: SUPPORTED_CHAIN,
-  name: "Base Sepolia",
-  currency: "ETH",
-  explorerUrl: "https://sepolia.basescan.org/",
+  name: "emc",
+  currency: "EMC",
+  explorerUrl: "https://testnet.emcscan.com",
   rpcUrl: import.meta.env.VITE_INFURA_RPC,
 };
 
-const BaseMainnet = {
-  chainId: 8453,
-  name: "Base mainnet",
-  currency: "ETH",
-  explorerUrl: "https://basescan.org/",
-  rpcUrl: import.meta.env.VITE_INFURA_MAINNET_RPC,
-};
 
 const metadata = {
   name: 'My Website',
@@ -30,7 +23,7 @@ const metadata = {
 
 export const configWeb3Modal = () => createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
-  chains: [BaseSepolia, BaseMainnet],
+  chains: [EMC],
   projectId: import.meta.env.VITE_PROJECTID,
   enableAnalytics: false,
   themeVariables: {
