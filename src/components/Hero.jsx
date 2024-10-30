@@ -16,8 +16,8 @@ const Hero = () => {
        }
 
     return (
-        <main className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A]">
-            <section className="bg-gradient-to-r from-[#080B2A] via-[#2A3E84] to-[#080B2A]">
+        <main className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] w-screen">
+            <section className="bg-gradient-to-r from-[#080B2A] via-[#2A3E84] to-[#080B2A] w-screen">
 
                 <div className='bg-gradient-to-r from-[#080B2A] via-[#2A3E84] to-[#080B2A  bg-no-repeat'
                   style={{
@@ -52,7 +52,7 @@ const Hero = () => {
                     </div>
                 </div>
             </section>
-            <section className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] bg-no-repeat"
+            <section className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] bg-no-repeat w-screen"
               style={{
                 backgroundImage: `url(${ellipse})`,
                 backgroundSize: "30% ",
@@ -105,7 +105,7 @@ const Hero = () => {
                     </div>
                 </div>
             </section>
-            <div className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] mt-16 bg-no-repeat"
+            <div className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] mt-16 bg-no-repeat w-screen"
              style={{
                 backgroundImage: `url(${ellipse})`,
                 backgroundSize: "30% ",
@@ -146,7 +146,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div >
-            <div className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] mt-16 ">
+            <div className="bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] mt-16 w-screen">
                 <div className=" border-white rounded-2xl lg:w-[90%] md:w-[90%] w-[100%] mx-auto border py-2 bg-[#171A3D]">
                     <div className="flex justify-between flex-col lg:flex-row md:flex-row items-center px-4 lg:px-0 md:px-0">
                         <div className="lg:w-[45%] md:w-[45%] w-[100%]">

@@ -7,7 +7,7 @@ const Header = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <header className="py-8 bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] ">
+    <header className="py-8 bg-gradient-to-r  from-[#080B2A] via-[#2A3E84] to-[#080B2A] w-screen ">
       <div className="w-[90%] mx-auto lg:flex md:flex justify-between hidden">
         <img src={logo} alt="" className="w-[235px] h-[43px]" />
         <nav>
